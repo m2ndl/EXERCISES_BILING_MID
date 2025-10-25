@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LNG7162 Midterm Exercises</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply the Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Smooth transition for accordion content */
+        .accordion-content {
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            overflow: hidden;
+            max-height: 0;
+        }
+        .accordion-content.open {
+            /* A large value to ensure all content fits */
+            max-height: 2000vh; /* Increased for very long exercise lists */
+        }
+
+        /* --- Quiz Button Styles --- */
+        .quiz-option {
+            width: 100%;
+            padding: 0.75rem; /* p-3 */
+            text-align: left;
+            background-color: rgb(55 65 81); /* bg-gray-700 */
+            border: 1px solid rgb(75 85 99); /* border-gray-600 */
+            border-radius: 0.5rem; /* rounded-lg */
+            transition-property: background-color, border-color, color;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 200ms;
+        }
+        .quiz-option:hover {
+            background-color: rgb(75 85 99); /* hover:bg-gray-600 */
+        }
+        .quiz-option:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+        .quiz-option.correct {
+            background-color: rgb(21 128 61); /* bg-green-700 */
+            border-color: rgb(22 163 74); /* border-green-600 */
+            color: rgb(255 255 255); /* text-white */
+        }
+        .quiz-option.incorrect {
+            background-color: rgb(185 28 28); /* bg-red-700 */
+            border-color: rgb(220 38 38); /* border-red-600 */
+            color: rgb(255 255 255); /* text-white */
+        }
+
+        /* --- Font Size Toggle CSS (Corrected) --- */
+        /* Small */
+        .font-size-sm .resizable-header-p {
+            font-size: 1rem; /* 16px */
+            line-height: 1.5rem;
+        }
+        .font-size-sm .resizable-quiz-question {
+             font-size: 1.125rem; /* 18px */
+             line-height: 1.75rem;
+        }
+        .font-size-sm .resizable-section-header {
+             font-size: 1.25rem; /* 20px */
+        }
+
+        /* Medium (Default) */
+         .font-size-md .resizable-header-p {
+            font-size: 1.125rem; /* 18px */
+            line-height: 1.75rem;
+        }
+        .font-size-md .resizable-quiz-question {
+             font-size: 1.25rem; /* 20px */
+             line-height: 1.75rem;
+        }
+         .font-size-md .resizable-section-header {
+             font-size: 1.5rem; /* 24px */
+        }
+        
+        /* Large */
+        .font-size-lg .resizable-header-p {
+            font-size: 1.25rem; /* 20px */
+            line-height: 1.75rem;
+        }
+        .font-size-lg .resizable-quiz-question {
+             font-size: 1.5rem; /* 24px */
+             line-height: 2rem;
+        }
+        .font-size-lg .resizable-section-header {
+             font-size: 1.875rem; /* 30px */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <div class="max-w-5xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden my-12">
+        
+        <!-- Header -->
+        <header class="p-8 md:p-12 bg-white border-b border-gray-200">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Comprehensive Midterm Exercises</h1>
+            <p class="text-lg md:text-xl text-gray-700 resizable-header-p">
+                Test your knowledge of all concepts and figures from Weeks 1-5.
+            </p>
+            
+            <!-- Font Size Toggle -->
+            <div class="flex items-center space-x-2 mt-6">
+                <span class="text-sm font-medium text-gray-600">Font Size:</span>
+                <button id="font-decrease" title="Decrease font size" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors">A-</button>
+                <button id="font-reset" title="Reset font size" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors">A</button>
+                <button id="font-increase" title="Increase font size" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors">A+</button>
+            </div>
+        </header>
+
+
+        <!-- ############################# -->
+        <!-- ### INTERACTIVE EXERCISES ### -->
+        <!-- ############################# -->
+        <div id="exercise-accordion-container">
+
+            <!-- Week 1 Exercises -->
+            <div class="accordion-item border-t border-gray-200">
+                <button class="exercise-accordion-header flex justify-between items-center w-full p-6 text-left cursor-pointer bg-slate-800 text-white hover:bg-slate-700 transition-colors duration-300" data-target="#week-1-exercises">
+                    <span class="text-xl lg:text-2xl font-semibold">Week 1: Introduction to Language Acquisition and Bilingualism</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="week-1-exercises" class="exercise-accordion-content bg-gray-800 text-gray-200">
+                    <div class="p-6 md:p-8 lg:p-10 border-l-4 border-slate-500 space-y-10">
+
+                        <!-- Section: Multiple Choice -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-slate-300 resizable-section-header">Multiple Choice (Concepts & Theories)</h3>
+                            <div class="space-y-8">
+                                <!-- Q 1.1 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">1. The systematic process of learning languages beyond the mother tongue is the definition of:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Bilingualism</button>
+                                        <button class="quiz-option" data-correct="true">b) Second Language Acquisition (SLA)</button>
+                                        <button class="quiz-option" data-correct="false">c) Multilingualism</button>
+                                        <button class="quiz-option" data-correct="false">d) Interactionist Theory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 1.2 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">2. Behaviorist Theory explains language learning as:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) The result of innate mental capacities</button>
+                                        <button class="quiz-option" data-correct="false">b) A social process driven by interaction</button>
+                                        <button class="quiz-option" data-correct="true">c) The formation of habits through imitation and reinforcement</button>
+                                        <button class="quiz-option" data-correct="false">d) The analysis of authentic input for statistical patterns</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 1.3 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">3. Mentalist Theory, in contrast to Behaviorism, argues that language learning is possible because of:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Positive reinforcement from caregivers</button>
+                                        <button class="quiz-option" data-correct="true">b) An innate language capacity (Universal Grammar)</button>
+                                        <button class="quiz-option" data-correct="false">c) A focus on authentic input</button>
+                                        <button class="quiz-option" data-correct="false">d) A desire to integrate into a community</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 1.4 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">4. Which theory emphasizes that social interaction is crucial for language development?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Behaviorist Theory</button>
+                                        <button class="quiz-option" data-correct="false">b) Mentalist Theory</button>
+                                        <button class="quiz-option" data-correct="true">c) Interactionist Theory</button>
+                                        <button class="quiz-option" data-correct="false">d) Usage-based Theory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 1.5 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">5. Which theory suggests that grammar is not innate but "emerges" from the learner's exposure to and analysis of authentic input patterns?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Behaviorist Theory</button>
+                                        <button class="quiz-option" data-correct="false">b) Mentalist Theory</button>
+                                        <button class="quiz-option" data-correct="false">c) Interactionist Theory</button>
+                                        <button class="quiz-option" data-correct="true">d) Usage-based Theory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 1.6 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">6. A person who learns two languages from birth is known as a:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Sequential bilingual</button>
+                                        <button class="quiz-option" data-correct="true">b) Simultaneous bilingual</button>
+                                        <button class="quiz-option" data-correct="false">c) Compound bilingual</button>
+                                        <button class="quiz-option" data-correct="false">d) Additive bilingual</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 1.7 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">7. A child who learns their home language (L1) and then begins learning a second language (L2) upon starting school is a:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Sequential bilingual</button>
+                                        <button class="quiz-option" data-correct="false">b) Simultaneous bilingual</button>
+                                        <button class="quiz-option" data-correct="false">c) Coordinate bilingual</button>
+                                        <button class="quiz-option" data-correct="false">d) Subtractive bilingual</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 1.8 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">8. An older theoretical distinction for a bilingual who learned two languages in the same context (e.g., home) and was thought to have one fused conceptual system was:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Coordinate bilingual</button>
+                                        <button class="quiz-option" data-correct="false">b) Sequential bilingual</button>
+                                        <button class="quiz-option" data-correct="true">c) Compound bilingual</button>
+                                        <button class="quiz-option" data-correct="false">d) Subtractive bilingual</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 1.9 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">9. An older theoretical distinction for a bilingual who learned two languages in different contexts (e.g., L1 at home, L2 at school) and was thought to have separate conceptual systems was:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Coordinate bilingual</button>
+                                        <button class="quiz-option" data-correct="false">b) Additive bilingual</button>
+                                        <button class="quiz-option" data-correct="false">c) Compound bilingual</button>
+                                        <button class="quiz-option" data-correct="false">d) Simultaneous bilingual</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 1.10 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">10. When learning an L2 (e.g., English) causes a learner to lose proficiency in their L1 (e.g., Spanish), this is known as:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Additive bilingualism</button>
+                                        <button class="quiz-option" data-correct="true">b) Subtractive bilingualism</button>
+                                        <button class="quiz-option" data-correct="false">c) Sequential bilingualism</button>
+                                        <button class="quiz-option" data-correct="false">d) Coordinate bilingualism</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 1.11 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">11. When learning an L2 (e.g., English) does not threaten the L1 (e.g., French in Canada) and both are valued, this is known as:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Additive bilingualism</button>
+                                        <button class="quiz-option" data-correct="false">b) Subtractive bilingualism</button>
+                                        <button class="quiz-option" data-correct="false">c) Simultaneous bilingualism</button>
+                                        <button class="quiz-option" data-correct="false">d) Compound bilingualism</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section: True/False -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-slate-300 resizable-section-header">True/False</h3>
+                            <div class="space-y-8">
+                                <!-- Q 1.12 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">12. T / F: According to your lecture keys, multilingualism is a rare exception and monolingualism is the global norm.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">True</button>
+                                        <button class="quiz-option" data-correct="true">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 1.13 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">13. T / F: The "historical paradigm shifts in SLA" moved from cognitive-based theories (Mentalism) to behavior-based theories (Behaviorism).</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">True</button>
+                                        <button class="quiz-option" data-correct="true">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section: Matching (as MCQs) -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-slate-300 resizable-section-header">Matching (Key Figures)</h3>
+                            <div class="space-y-8">
+                                <!-- Q 1.14 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">14. Which concept is associated with B.F. Skinner?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Universal Grammar (UG)</button>
+                                        <button class="quiz-option" data-correct="false">b) Comprehensible Input (i+1)</button>
+                                        <button class="quiz-option" data-correct="true">c) Behaviorist Theory</button>
+                                        <button class="quiz-option" data-correct="false">d) Concepts of "Bilingual life and reality"</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 1.15 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">15. Which concept is associated with Noam Chomsky?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Universal Grammar (UG)</button>
+                                        <button class="quiz-option" data-correct="false">b) Comprehensible Input (i+1)</button>
+                                        <button class="quiz-option" data-correct="false">c) Behaviorist Theory</button>
+                                        <button class="quiz-option" data-correct="false">d) Concepts of "Bilingual life and reality"</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 1.16 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">16. Which concept is associated with François Grosjean?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Universal Grammar (UG)</button>
+                                        <button class="quiz-option" data-correct="false">b) Comprehensible Input (i+1)</button>
+                                        <button class="quiz-option" data-correct="false">c) Behaviorist Theory</button>
+                                        <button class="quiz-option" data-correct="true">d) Concepts of "Bilingual life and reality"</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 1.17 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">17. Which concept is associated with Stephen Krashen?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Universal Grammar (UG)</button>
+                                        <button class="quiz-option" data-correct="true">b) Comprehensible Input (i+1)</button>
+                                        <button class="quiz-option" data-correct="false">c) Behaviorist Theory</button>
+                                        <button class="quiz-option" data-correct="false">d) Concepts of "Bilingual life and reality"</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="reset-quiz text-sm text-cyan-400 hover:text-cyan-300 font-medium mt-10">Reset Week 1 Questions</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 2 Exercises -->
+            <div class="accordion-item border-t border-gray-200">
+                <button class="exercise-accordion-header flex justify-between items-center w-full p-6 text-left cursor-pointer bg-indigo-800 text-white hover:bg-indigo-700 transition-colors duration-300" data-target="#week-2-exercises">
+                    <span class="text-xl lg:text-2xl font-semibold">Week 2: Cognitive Development and Bilingualism</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="week-2-exercises" class="exercise-accordion-content bg-gray-800 text-gray-200">
+                    <div class="p-6 md:p-8 lg:p-10 border-l-4 border-indigo-500 space-y-10">
+
+                        <!-- Section: Multiple Choice -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-indigo-300 resizable-section-header">Multiple Choice (Concepts & Theories)</h3>
+                            <div class="space-y-8">
+                                <!-- Q 2.1 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">1. The term for the enhanced attention regulation and cognitive flexibility often observed in bilinguals is:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Cognitive Reserve</button>
+                                        <button class="quiz-option" data-correct="true">b) Executive Control</button>
+                                        <button class="quiz-option" data-correct="false">c) Neural Plasticity</button>
+                                        <button class="quiz-option" data-correct="false">d) Metalinguistic Awareness</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 2.2 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">2. A bilingual person's ability to think about and reflect on language as an object (e.g., understanding what a "word" is) is known as:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Working Memory Management</button>
+                                        <button class="quiz-option" data-correct="false">b) Neural Plasticity</button>
+                                        <button class="quiz-option" data-correct="true">c) Metalinguistic Awareness</button>
+                                        <button class="quiz-option" data-correct="false">d) Cognitive Architecture</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 2.3 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">3. The idea that the brain can adapt and reorganize itself in response to new experiences, such as learning an L2, is called:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Neural Plasticity</button>
+                                        <button class="quiz-option" data-correct="false">b) Cognitive Reserve</button>
+                                        <button class="quiz-option" data-correct="false">c) Executive Control</button>
+                                        <button class="quiz-option" data-correct="false">d) Language Aptitude</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 2.4 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">4. The theory that stimulating mental activity, such as bilingualism, can build the brain's resilience against age-related decline is:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Critical Period Hypothesis</button>
+                                        <button class="quiz-option" data-correct="false">b) Language Aptitude Theory</button>
+                                        <button class="quiz-option" data-correct="true">c) Cognitive Reserve Theory</button>
+                                        <button class="quiz-option" data-correct="false">d) Executive Control Theory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 2.5 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">5. The theory that posits biological constraints on language learning, often linked to puberty, is the:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Critical Period Hypothesis</button>
+                                        <button class="quiz-option" data-correct="false">b) Cognitive Reserve Theory</button>
+                                        <button class="quiz-option" data-correct="false">c) Executive Control Theory</button>
+                                        <button class="quiz-option" data-correct="false">d) Language Aptitude Theory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 2.6 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">6. The term for a specific, individual "talent" for language learning, composed of abilities like phonemic coding and grammatical sensitivity, is:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Metalinguistic Awareness</button>
+                                        <button class="quiz-option" data-correct="false">b) Executive Control</button>
+                                        <button class="quiz-option" data-correct="true">c) Language Aptitude</button>
+                                        <button class="quiz-option" data-correct="false">d) Neural Plasticity</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 2.7 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">7. The theoretical framework that specifically addresses the "bilingual advantage" in attention and task-switching is:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Language Aptitude Theory</button>
+                                        <button class="quiz-option" data-correct="false">b) Cognitive Reserve Theory</button>
+                                        <button class="quiz-option" data-correct="false">c) Critical Period Hypothesis</button>
+                                        <button class="quiz-option" data-correct="true">d) Executive Control Theory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 2.8 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">8. The term for how the L1 and L2 are represented in the mind (e.g., as separate or shared systems) is:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Neural Plasticity</button>
+                                        <button class="quiz-option" data-correct="true">b) Cognitive architecture</button>
+                                        <button class="quiz-option" data-correct="false">c) Executive control</button>
+                                        <button class="quiz-option" data-correct="false">d) Working memory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section: True/False -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-indigo-300 resizable-section-header">True/False</h3>
+                            <div class="space-y-8">
+                                <!-- Q 2.9 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">9. T / F: "Working memory management" in bilinguals refers to the cognitive processes involved in handling two language systems simultaneously.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">True</button>
+                                        <button class="quiz-option" data-correct="false">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 2.10 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">10. T / F: Language Aptitude Theory claims that all humans have an identical, uniform ability to learn an L2.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">True</button>
+                                        <button class="quiz-option" data-correct="true">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 2.11 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">11. T / F: Cognitive Reserve Theory suggests that bilingualism has no effect on the brain's health over time.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">True</button>
+                                        <button class="quiz-option" data-correct="true">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 2.12 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">12. T / F: The Critical Period Hypothesis states that adults are generally faster and more successful at acquiring a native-like accent than children.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">True</button>
+                                        <button class="quiz-option" data-correct="true">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section: Matching (as MCQs) -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-indigo-300 resizable-section-header">Matching (Key Figures)</h3>
+                            <div class="space-y-8">
+                                <!-- Q 2.13 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">13. Which concept is associated with Ellen Bialystok?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Language Aptitude Model</button>
+                                        <button class="quiz-option" data-correct="true">b) Executive Control / Bilingual Advantage</button>
+                                        <button class="quiz-option" data-correct="false">c) Psycholinguistics of bilingual word recognition</button>
+                                        <button class="quiz-option" data-correct="false">d) Bilingualism, cognition, and emotion</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 2.14 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">14. Which concept is associated with Judith Kroll?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Language Aptitude Model</button>
+                                        <button class="quiz-option" data-correct="false">b) Executive Control / Bilingual Advantage</button>
+                                        <button class="quiz-option" data-correct="true">c) Psycholinguistics of bilingual word recognition</button>
+                                        <button class="quiz-option" data-correct="false">d) Bilingualism, cognition, and emotion</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 2.15 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">15. Which concept is associated with Aneta Pavlenko?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Language Aptitude Model</button>
+                                        <button class="quiz-option" data-correct="false">b) Executive Control / Bilingual Advantage</button>
+                                        <button class="quiz-option" data-correct="false">c) Psycholinguistics of bilingual word recognition</button>
+                                        <button class="quiz-option" data-correct="true">d) Bilingualism, cognition, and emotion</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 2.16 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">16. Which concept is associated with John Carroll?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Language Aptitude Model</button>
+                                        <button class="quiz-option" data-correct="false">b) Executive Control / Bilingual Advantage</button>
+                                        <button class="quiz-option" data-correct="false">c) Psycholinguistics of bilingual word recognition</button>
+                                        <button class="quiz-option" data-correct="false">d) Bilingualism, cognition, and emotion</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="reset-quiz text-sm text-cyan-400 hover:text-cyan-300 font-medium mt-10">Reset Week 2 Questions</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 3 Exercises -->
+            <div class="accordion-item border-t border-gray-200">
+                <button class="exercise-accordion-header flex justify-between items-center w-full p-6 text-left cursor-pointer bg-teal-800 text-white hover:bg-teal-700 transition-colors duration-300" data-target="#week-3-exercises">
+                    <span class="text-xl lg:text-2xl font-semibold">Week 3: Social Dimensions of Additional Language Learning</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="week-3-exercises" class="exercise-accordion-content bg-gray-800 text-gray-200">
+                    <div class="p-6 md:p-8 lg:p-10 border-l-4 border-teal-500 space-y-10">
+
+                        <!-- Section: Multiple Choice -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-teal-300 resizable-section-header">Multiple Choice (Concepts & Theories)</h3>
+                            <div class="space-y-8">
+                                <!-- Q 3.1 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">1. In Sociocultural Theory (SCT), the gap between what a learner can do independently and what they can do with assistance is the:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Zone of Proximal Development (ZPD)</button>
+                                        <button class="quiz-option" data-correct="false">b) Community of Practice (CoP)</button>
+                                        <button class="quiz-option" data-correct="false">c) Legitimate Peripheral Participation (LPP)</button>
+                                        <button class="quiz-option" data-correct="false">d) Mediation</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 3.2 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">2. The interactive support (e.g., hints, questions) provided by a "More Knowledgeable Other" (MKO) to help a learner succeed within their ZPD is known as:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Scaffolding</button>
+                                        <button class="quiz-option" data-correct="false">b) Mediation</button>
+                                        <button class="quiz-option" data-correct="false">c) Investment</button>
+                                        <button class="quiz-option" data-correct="false">d) Power Relations</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 3.3 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">3. The general Vygotskyan concept that all human action, including thought, is shaped by cultural tools (especially language) is:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Scaffolding</button>
+                                        <button class="quiz-option" data-correct="true">b) Mediation</button>
+                                        <button class="quiz-option" data-correct="false">c) Social Identity</button>
+                                        <button class="quiz-option" data-correct="false">d) Investment</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 3.4 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">4. A group of people (e.g., a classroom, a workplace) defined by their shared goals and practices is a:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Zone of Proximal Development (ZPD)</button>
+                                        <button class="quiz-option" data-correct="true">b) Community of Practice (CoP)</button>
+                                        <button class="quiz-option" data-correct="false">c) Social Identity</button>
+                                        <button class="quiz-option" data-correct="false">d) Power Relation</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 3.5 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">5. The process by which newcomers learn by first engaging in low-risk tasks on the "edge" of a group before moving to the center is:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Legitimate Peripheral Participation (LPP)</button>
+                                        <button class="quiz-option" data-correct="false">b) Scaffolding</button>
+                                        <button class="quiz-option" data-correct="false">c) Investment</button>
+                                        <button class="quiz-option" data-correct="false">d) ZPD</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 3.6 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">6. Bonny Norton's concept of Investment is a critique of 'motivation' because it adds the critical dimensions of:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Age and Aptitude</button>
+                                        <button class="quiz-option" data-correct="true">b) Identity and Power Relations</button>
+                                        <button class="quiz-option" data-correct="false">c) ZPD and Scaffolding</button>
+                                        <button class="quiz-option" data-correct="false">d) Memory and Practice</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 3.7 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">7. The idea that a learner's identity is not fixed but is "multiple, a site of struggle, and changing over time" is central to:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Sociocultural Theory</button>
+                                        <button class="quiz-option" data-correct="true">b) Social Identity Theory</button>
+                                        <button class="quiz-option" data-correct="false">c) Behaviorist Theory</button>
+                                        <button class="quiz-option" data-correct="false">d) Critical Period Hypothesis</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section: True/False -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-teal-300 resizable-section-header">True/False</h3>
+                            <div class="space-y-8">
+                                <!-- Q 3.8 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">8. T / F: Sociocultural Theory (SCT) views learning as an internal, individual cognitive process that is separate from social interaction.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">True</button>
+                                        <button class="quiz-option" data-correct="true">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 3.9 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">9. T / F: "Power relations" can affect a learner's opportunity to speak and willingness to invest in the L2.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">True</button>
+                                        <button class="quiz-option" data-correct="false">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 3.10 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">10. T / F: Social Identity Theory suggests that L2 learning is unrelated to a person's sense of self.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">True</button>
+                                        <button class="quiz-option" data-correct="true">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 3.11 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">11. T / F: Investment Theory proposes that learners expect a "return" (e.g., social, economic) on their efforts.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">True</button>
+                                        <button class="quiz-option" data-correct="false">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 3.12 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">12. T / F: The theory of Communities of Practice (CoP) views learning as a form of social participation.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">True</button>
+                                        <button class="quiz-option" data-correct="false">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section: Matching (as MCQs) -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-teal-300 resizable-section-header">Matching (Key Figures)</h3>
+                            <div class="space-y-8">
+                                <!-- Q 3.13 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">13. Which concept is associated with Lev Vygotsky?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Communities of Practice (CoP)</button>
+                                        <button class="quiz-option" data-correct="true">b) Sociocultural Theory (ZPD)</button>
+                                        <button class="quiz-option" data-correct="false">c) Applying Sociocultural Theory to SLA</button>
+                                        <button class="quiz-option" data-correct="false">d) Investment Theory / Social Identity</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 3.14 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">14. Which concept is associated with Bonny Norton?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Communities of Practice (CoP)</button>
+                                        <button class="quiz-option" data-correct="false">b) Sociocultural Theory (ZPD)</button>
+                                        <button class="quiz-option" data-correct="false">c) Applying Sociocultural Theory to SLA</button>
+                                        <button class="quiz-option" data-correct="true">d) Investment Theory / Social Identity</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 3.15 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">15. Which concept is associated with Lave & Wenger?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Communities of Practice (CoP)</button>
+                                        <button class="quiz-option" data-correct="false">b) Sociocultural Theory (ZPD)</button>
+                                        <button class="quiz-option" data-correct="false">c) Applying Sociocultural Theory to SLA</button>
+                                        <button class="quiz-option" data-correct="false">d) Investment Theory / Social Identity</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 3.16 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">16. Which concept is associated with James Lantolf?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Communities of Practice (CoP)</button>
+                                        <button class="quiz-option" data-correct="false">b) Sociocultural Theory (ZPD)</button>
+                                        <button class="quiz-option" data-correct="true">c) Applying Sociocultural Theory to SLA</button>
+                                        <button class="quiz-option" data-correct="false">d) Investment Theory / Social Identity</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="reset-quiz text-sm text-cyan-400 hover:text-cyan-300 font-medium mt-10">Reset Week 3 Questions</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 4 Exercises -->
+            <div class="accordion-item border-t border-gray-200">
+                <button class="exercise-accordion-header flex justify-between items-center w-full p-6 text-left cursor-pointer bg-sky-800 text-white hover:bg-sky-700 transition-colors duration-300" data-target="#week-4-exercises">
+                    <span class="text-xl lg:text-2xl font-semibold">Week 4: Social, Educational, and Ideological Forces</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="week-4-exercises" class="exercise-accordion-content bg-gray-800 text-gray-200">
+                    <div class="p-6 md:p-8 lg:p-10 border-l-4 border-sky-500 space-y-10">
+
+                        <!-- Section: Multiple Choice -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-sky-300 resizable-section-header">Multiple Choice (Concepts & Theories)</h3>
+                            <div class="space-y-8">
+                                <!-- Q 4.1 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">1. Socially shared beliefs about languages and their speakers that often justify existing power structures are known as:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Language Policies</button>
+                                        <button class="quiz-option" data-correct="true">b) Language Ideologies</button>
+                                        <button class="quiz-option" data-correct="false">c) Language Rights</button>
+                                        <button class="quiz-option" data-correct="false">d) Language Planning</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.2 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">2. The specific belief that one variety of a language is inherently superior to all others is:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Monolingual Ideology</button>
+                                        <button class="quiz-option" data-correct="false">b) Critical Theory</button>
+                                        <button class="quiz-option" data-correct="true">c) Standard Language Ideology</button>
+                                        <button class="quiz-option" data-correct="false">d) Language Rights Theory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.3 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">3. The (often implicit) belief that monolingualism is the normal or default human state is:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Language Rights</button>
+                                        <button class="quiz-option" data-correct="true">b) Monolingual Ideology</button>
+                                        <button class="quiz-option" data-correct="false">c) Language Policy</button>
+                                        <button class="quiz-option" data-correct="false">d) Standard Language Ideology</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.4 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">4. The official, top-down decisions made by governments regarding language use in a society is called:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Language Ideology</button>
+                                        <button class="quiz-option" data-correct="true">b) Language Policy and Planning (LPP)</button>
+                                        <button class="quiz-option" data-correct="false">c) Linguistic Genocide</button>
+                                        <button class="quiz-option" data-correct="false">d) Critical Theory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.5 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">5. Which bilingual education model uses the L1 only as a temporary bridge to help students move into L2-only classes?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Maintenance</button>
+                                        <button class="quiz-option" data-correct="false">b) Two-Way Immersion</button>
+                                        <button class="quiz-option" data-correct="true">c) Transitional</button>
+                                        <button class="quiz-option" data-correct="false">d) CLIL</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.6 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">6. Which bilingual education model aims to fully develop bilingualism and biliteracy in both L1 and L2 for language minority students?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Maintenance</button>
+                                        <button class="quiz-option" data-correct="false">b) Transitional</button>
+                                        <button class="quiz-option" data-correct="false">c) Submersion</button>
+                                        <button class="quiz-option" data-correct="false">d) Standard Model</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.7 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">7. Which model integrates language-majority and language-minority students with the goal of all students becoming bilingual?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Maintenance</button>
+                                        <button class="quiz-option" data-correct="true">b) Two-Way Immersion</button>
+                                        <button class="quiz-option" data-correct="false">c) Transitional</button>
+                                        <button class="quiz-option" data-correct="false">d) CLIL</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.8 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">8. What does the acronym CLIL stand for?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Critical Language and Ideology Lessons</button>
+                                        <button class="quiz-option" data-correct="true">b) Content and Language Integrated Learning</button>
+                                        <button class="quiz-option" data-correct="false">c) Cummins' Language Integration Level</button>
+                                        <button class="quiz-option" data-correct="false">d) Carroll's Language Input Literacy</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.9 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">9. The argument that using one's mother tongue in education and public life is a basic human right is central to:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Language Rights Theory</button>
+                                        <button class="quiz-option" data-correct="false">b) Language Ideology Theory</button>
+                                        <button class="quiz-option" data-correct="false">c) Critical Theory</button>
+                                        <button class="quiz-option" data-correct="false">d) LPP</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.10 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">10. Which concept refers to policies that actively aim to eradicate a minority language, often through the school system?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Language Ideology</button>
+                                        <button class="quiz-option" data-correct="false">b) Standard Language Ideology</button>
+                                        <button class="quiz-option" data-correct="true">c) Linguistic Genocide</button>
+                                        <button class="quiz-option" data-correct="false">d) Language Policy</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.11 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">11. The theory that analyzes how social class, power, and concepts like "cultural capital" influence education is:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Language Rights Theory</button>
+                                        <button class="quiz-option" data-correct="false">b) LPP Theory</button>
+                                        <button class="quiz-option" data-correct="true">c) Critical Theory</button>
+                                        <button class="quiz-option" data-correct="false">d) Language Ideology Theory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section: True/False -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-sky-300 resizable-section-header">True/False</h3>
+                            <div class="space-y-8">
+                                <!-- Q 4.12 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">12. T / F: Jim Cummins' concept of BICS (Basic Interpersonal Communicative Skills) refers to the abstract, academic language needed for school.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">True</button>
+                                        <button class="quiz-option" data-correct="true">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.13 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">13. T / F: Jim Cummins' concept of CALP (Cognitive Academic Language Proficiency) refers to basic, social, "playground" language.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">True</button>
+                                        <button class="quiz-option" data-correct="true">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.14 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">14. T / F: Pierre Bourdieu's concept of Symbolic Power helps explain how "Standard Language Ideology" functions to maintain social hierarchies.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">True</button>
+                                        <button class="quiz-option" data-correct="false">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.15 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">15. T / F: Language Policy and Planning (LPP) only refers to individual choices, not government actions.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">True</button>
+                                        <button class="quiz-option" data-correct="true">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section: Matching (as MCQs) -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-sky-300 resizable-section-header">Matching (Key Figures)</h3>
+                            <div class="space-y-8">
+                                <!-- Q 4.16 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">16. Which concept is associated with Joshua Fishman?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) BICS / CALP Distinction</button>
+                                        <button class="quiz-option" data-correct="false">b) Linguistic Genocide / Language Rights</button>
+                                        <button class="quiz-option" data-correct="true">c) Language Maintenance & Language Shift</button>
+                                        <button class="quiz-option" data-correct="false">d) Continua of Biliteracy / LPP</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.17 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">17. Which concept is associated with Jim Cummins?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) BICS / CALP Distinction</button>
+                                        <button class="quiz-option" data-correct="false">b) Linguistic Genocide / Language Rights</button>
+                                        <button class="quiz-option" data-correct="false">c) Language Maintenance & Language Shift</button>
+                                        <button class="quiz-option" data-correct="false">d) Continua of Biliteracy / LPP</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.18 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">18. Which concept is associated with Tove Skutnabb-Kangas?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) BICS / CALP Distinction</button>
+                                        <button class="quiz-option" data-correct="true">b) Linguistic Genocide / Language Rights</button>
+                                        <button class="quiz-option" data-correct="false">c) Language Maintenance & Language Shift</button>
+                                        <button class="quiz-option" data-correct="false">d) Continua of Biliteracy / LPP</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 4.19 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">19. Which concept is associated with Nancy Hornberger?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) BICS / CALP Distinction</button>
+                                        <button class="quiz-option" data-correct="false">b) Linguistic Genocide / Language Rights</button>
+                                        <button class="quiz-option" data-correct="false">c) Language Maintenance & Language Shift</button>
+                                        <button class="quiz-option" data-correct="true">d) Continua of Biliteracy / LPP</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="reset-quiz text-sm text-cyan-400 hover:text-cyan-300 font-medium mt-10">Reset Week 4 Questions</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 5 Exercises -->
+            <div class="accordion-item border-t border-gray-200">
+                <button class="exercise-accordion-header flex justify-between items-center w-full p-6 text-left cursor-pointer bg-cyan-800 text-white hover:bg-cyan-700 transition-colors duration-300" data-target="#week-5-exercises">
+                    <span class="text-xl lg:text-2xl font-semibold">Week 5: Individual Differences in Language Acquisition</span>
+                    <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="week-5-exercises" class="exercise-accordion-content bg-gray-800 text-gray-200">
+                    <div class="p-6 md:p-8 lg:p-10 border-l-4 border-cyan-500 space-y-10">
+                        
+                        <!-- Section: Multiple Choice -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-cyan-300 resizable-section-header">Multiple Choice (Concepts, Theories & Figures)</h3>
+                            <div class="space-y-8">
+                                <!-- Q 5.1 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">1. Eric Lenneberg is the key figure associated with which hypothesis?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Language Aptitude Theory</button>
+                                        <button class="quiz-option" data-correct="true">b) Critical Period Hypothesis</button>
+                                        <button class="quiz-option" data-correct="false">c) Gardner's Motivation Theory</button>
+                                        <button class="quiz-option" data-correct="false">d) Self-Determination Theory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.2 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">2. Robert Gardner is the key figure who developed which theory of motivation?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Self-Determination Theory</button>
+                                        <button class="quiz-option" data-correct="false">b) Investment Theory</button>
+                                        <button class="quiz-option" data-correct="true">c) Gardner's Motivation Theory (Integrative/Instrumental)</button>
+                                        <button class="quiz-option" data-correct="false">d) Multiple Intelligences Theory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.3 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">3. John Carroll is the key figure associated with:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) The Critical Period Hypothesis</button>
+                                        <button class="quiz-option" data-correct="false">b) The L2 Motivational Self System</button>
+                                        <button class="quiz-option" data-correct="false">c) Multiple Intelligences Theory</button>
+                                        <button class="quiz-option" data-correct="true">d) The Language Aptitude Model (MLAT)</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.4 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">4. Zoltán Dörnyei is a key modern figure known for his research on:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Individual differences and motivation</button>
+                                        <button class="quiz-option" data-correct="false">b) The Critical Period Hypothesis</button>
+                                        <button class="quiz-option" data-correct="false">c) Language Aptitude</button>
+                                        <button class="quiz-option" data-correct="false">d) Sociocultural Theory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.5 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">5. Howard Gardner is the key figure who proposed:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Language Aptitude Theory</button>
+                                        <button class="quiz-option" data-correct="false">b) Gardner's Motivation Theory</button>
+                                        <button class="quiz-option" data-correct="true">c) Multiple Intelligences Theory</button>
+                                        <button class="quiz-option" data-correct="false">d) Self-Determination Theory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.6 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">6. Which concept refers to a biological "window of opportunity" for native-like language acquisition?</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Language Aptitude</button>
+                                        <button class="quiz-option" data-correct="true">b) Critical Period Hypothesis</button>
+                                        <button class="quiz-option" data-correct="false">c) Self-Determination Theory</button>
+                                        <button class="quiz-option" data-correct="false">d) Integrative Motivation</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.7 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">7. The cognitive abilities (phonemic coding, grammatical sensitivity, etc.) that predict success in L2 learning are components of:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Motivation</button>
+                                        <button class="quiz-option" data-correct="false">b) Personality</button>
+                                        <button class="quiz-option" data-correct="true">c) Language Aptitude</button>
+                                        <button class="quiz-option" data-correct="false">d) Multiple Intelligences</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.8 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">8. A learner's stable personality trait of being outgoing and socially engaged is:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Extroversion</button>
+                                        <button class="quiz-option" data-correct="false">b) Risk-taking</button>
+                                        <button class="quiz-option" data-correct="false">c) Integrative Motivation</button>
+                                        <button class="quiz-option" data-correct="false">d) Intrinsic Motivation</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.9 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">9. Anxiety that is helpful and focuses the mind on a learning task is known as:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Debilitative anxiety</button>
+                                        <button class="quiz-option" data-correct="false">b) Trait anxiety</button>
+                                        <button class="quiz-option" data-correct="true">c) Facilitative anxiety</button>
+                                        <button class="quiz-option" data-correct="false">d) State anxiety</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.10 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">10. A learner who wants to learn an L2 to get a better job or pass an exam has:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Integrative motivation</button>
+                                        <button class="quiz-option" data-correct="true">b) Instrumental motivation</button>
+                                        <button class="quiz-option" data-correct="false">c) Intrinsic motivation</button>
+                                        <button class="quiz-option" data-correct="false">d) Debilitative anxiety</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.11 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">11. A learner who wants to learn an L2 to fit in with and get to know the L2-speaking community has:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Integrative motivation</button>
+                                        <button class="quiz-option" data-correct="false">b) Instrumental motivation</button>
+                                        <button class="quiz-option" data-correct="false">c) Extrinsic motivation</button>
+                                        <button class="quiz-option" data-correct="false">d) Risk-taking</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.12 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">12. Self-Determination Theory primarily distinguishes between:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Integrative and Instrumental motivation</button>
+                                        <button class="quiz-option" data-correct="true">b) Intrinsic and Extrinsic motivation</button>
+                                        <button class="quiz-option" data-correct="false">c) Aptitude and Motivation</button>
+                                        <button class="quiz-option" data-correct="false">d) Styles and Strategies</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.13 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">13. A learner who studies a language because they genuinely love the process of learning and discovery has:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Instrumental motivation</button>
+                                        <button class="quiz-option" data-correct="false">b) Extrinsic motivation</button>
+                                        <button class="quiz-option" data-correct="true">c) Intrinsic motivation</button>
+                                        <button class="quiz-option" data-correct="false">d) Integrative motivation</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.14 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">14. Specific, conscious, goal-oriented actions, such as "using a mnemonic device" or "asking for clarification," are examples of:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Learning Styles</button>
+                                        <button class="quiz-option" data-correct="true">b) Learning Strategies</button>
+                                        <button class="quiz-option" data-correct="false">c) Personality Factors</button>
+                                        <button class="quiz-option" data-correct="false">d) Aptitude</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.15 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">15. A learner's general, stable preference for processing information (e.g., "visual learner" or "kinesthetic learner") is a:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">a) Learning Style</button>
+                                        <button class="quiz-option" data-correct="false">b) Learning Strategy</button>
+                                        <button class="quiz-option" data-correct="false">c) Motivation Type</button>
+                                        <button class="quiz-option" data-correct="false">d) Personality Factor</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.16 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">16. The theory that posits that humans have different, independent types of "smarts" (e.g., musical, spatial, interpersonal) is:</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">a) Gardner's Motivation Theory</button>
+                                        <button class="quiz-option" data-correct="true">b) Howard Gardner's Multiple Intelligences Theory</button>
+                                        <button class="quiz-option" data-correct="false">c) John Carroll's Language Aptitude Theory</button>
+                                        <button class="quiz-option" data-correct="false">d) Self-Determination Theory</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section: True/False -->
+                        <div>
+                            <h3 class="text-2xl font-bold mb-6 text-cyan-300 resizable-section-header">True/False</h3>
+                            <div class="space-y-8">
+                                <!-- Q 5.17 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">17. T / F: According to the lecture keys, "Risk-taking" is considered a key component of Language Aptitude.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">True</button>
+                                        <button class="quiz-option" data-correct="true">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.18 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">18. T / F: "Self-esteem" is classified as a personality factor.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="true">True</button>
+                                        <button class="quiz-option" data-correct="false">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.19 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">19. T / F: Robert Gardner and Howard Gardner are the same person.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">True</button>
+                                        <button class="quiz-option" data-correct="true">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.20 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">20. T / F: Zoltán Dörnyei is a key figure associated with the Critical Period Hypothesis.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">True</button>
+                                        <button class="quiz-option" data-correct="true">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                                <!-- Q 5.21 -->
+                                <div class="quiz-question">
+                                    <p class="font-semibold mb-4 resizable-quiz-question">21. T / F: "Language learning aptitude components" are part of motivation theory.</p>
+                                    <div class="space-y-3">
+                                        <button class="quiz-option" data-correct="false">True</button>
+                                        <button class="quiz-option" data-correct="true">False</button>
+                                    </div>
+                                    <p class="feedback-message mt-3 text-sm font-medium"></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="reset-quiz text-sm text-cyan-400 hover:text-cyan-300 font-medium mt-10">Reset Week 5 Questions</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center p-8 bg-gray-50 text-gray-500 text-sm">
+            Good luck with your midterm!
+        </footer>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const accordionHeaders = document.querySelectorAll('.exercise-accordion-header');
+            
+            // Open the first week by default
+            const firstHeader = accordionHeaders[0];
+            if (firstHeader) {
+                const firstContent = document.querySelector(firstHeader.dataset.target);
+                const firstIcon = firstHeader.querySelector('svg');
+                
+                if (firstContent && firstIcon) {
+                    firstContent.classList.add('open');
+                    firstContent.style.maxHeight = firstContent.scrollHeight + 'px'; // Set max-height for animation
+                    firstIcon.classList.add('rotate-180');
+                    firstHeader.classList.add('is-open');
+                }
+            }
+
+            // Accordion logic
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function () {
+                    const targetContent = document.querySelector(this.dataset.target);
+                    const targetIcon = this.querySelector('svg');
+
+                    if (!targetContent || !targetIcon) return;
+
+                    const isAlreadyOpen = this.classList.contains('is-open');
+
+                    // Close all other items
+                    accordionHeaders.forEach(h => {
+                        if (h !== this) {
+                            const content = document.querySelector(h.dataset.target);
+                            const icon = h.querySelector('svg');
+                            if (content && icon) {
+                                content.classList.remove('open');
+                                content.style.maxHeight = null;
+                                icon.classList.remove('rotate-180');
+                                h.classList.remove('is-open');
+                            }
+                        }
+                    });
+
+                    // Toggle the clicked item
+                    if (isAlreadyOpen) {
+                        targetContent.classList.remove('open');
+                        targetContent.style.maxHeight = null;
+                        targetIcon.classList.remove('rotate-180');
+                        this.classList.remove('is-open');
+                    } else {
+                        targetContent.classList.add('open');
+                        targetContent.style.maxHeight = targetContent.scrollHeight + 'px';
+                        targetIcon.classList.add('rotate-180');
+                        this.classList.add('is-open');
+                    }
+                });
+            });
+
+            // Recalculate max-height on window resize
+            window.addEventListener('resize', () => {
+                document.querySelectorAll('.accordion-content.open').forEach(content => {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                });
+            });
+
+            // --- Font Size Toggle Script ---
+            const fontDecrease = document.getElementById('font-decrease');
+            const fontReset = document.getElementById('font-reset');
+            const fontIncrease = document.getElementById('font-increase');
+            const fontSizes = ['font-size-sm', 'font-size-md', 'font-size-lg'];
+            const body = document.body;
+
+            let currentSize = localStorage.getItem('fontSize') || 'font-size-md';
+            if (!fontSizes.includes(currentSize)) {
+                currentSize = 'font-size-md';
+            }
+            body.classList.add(currentSize);
+
+            function setFontSize(size) {
+                fontSizes.forEach(s => body.classList.remove(s));
+                body.classList.add(size);
+                localStorage.setItem('fontSize', size);
+                // Recalculate open accordions
+                document.querySelectorAll('.accordion-content.open').forEach(content => {
+                    requestAnimationFrame(() => {
+                         content.style.maxHeight = content.scrollHeight + 'px';
+                    });
+                });
+            }
+
+            if(fontDecrease) fontDecrease.addEventListener('click', () => setFontSize('font-size-sm'));
+            if(fontReset) fontReset.addEventListener('click', () => setFontSize('font-size-md'));
+            if(fontIncrease) fontIncrease.addEventListener('click', () => setFontSize('font-size-lg'));
+
+            // --- Quiz Logic Script ---
+            const quizOptions = document.querySelectorAll('.quiz-option');
+
+            quizOptions.forEach(button => {
+                button.addEventListener('click', function() {
+                    const questionContainer = this.closest('.quiz-question');
+                    if (!questionContainer) return;
+                    const feedbackEl = questionContainer.querySelector('.feedback-message');
+                    const allOptions = questionContainer.querySelectorAll('.quiz-option');
+                    const isCorrect = this.dataset.correct === 'true';
+
+                    allOptions.forEach(btn => btn.disabled = true);
+
+                    if (isCorrect) {
+                        this.classList.add('correct');
+                        if(feedbackEl) {
+                            feedbackEl.textContent = 'Correct!';
+                            feedbackEl.classList.add('text-green-400');
+                            feedbackEl.classList.remove('text-red-400');
+                        }
+                    } else {
+                        this.classList.add('incorrect');
+                        if(feedbackEl) {
+                            feedbackEl.textContent = 'Incorrect. The correct answer is highlighted.';
+                            feedbackEl.classList.add('text-red-400');
+                            feedbackEl.classList.remove('text-green-400');
+                        }
+                        allOptions.forEach(btn => {
+                            if (btn.dataset.correct === 'true') {
+                                btn.classList.add('correct');
+                            }
+                        });
+                    }
+                });
+            });
+
+            // --- Reset Quiz Logic ---
+            const resetButtons = document.querySelectorAll('.reset-quiz');
+            resetButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const quizContainer = this.closest('.exercise-accordion-content');
+                    if (!quizContainer) return;
+                    const allOptions = quizContainer.querySelectorAll('.quiz-option');
+                    const allFeedback = quizContainer.querySelectorAll('.feedback-message');
+
+                    allOptions.forEach(btn => {
+                        btn.disabled = false;
+                        btn.classList.remove('correct', 'incorrect');
+                    });
+
+                    allFeedback.forEach(msg => {
+                        msg.textContent = '';
+                        msg.classList.remove('text-green-400', 'text-red-400');
+                    });
+                });
+            });
+
+        });
+    </script>
+
+</body>
+</html>
